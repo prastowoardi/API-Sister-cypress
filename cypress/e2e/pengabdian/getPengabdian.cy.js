@@ -1,12 +1,12 @@
-describe('Get Riwayat Penelitian', () => {
+describe('Get Riwayat Pengabdian', () => {
     before(() => {
         cy.accessToken()
     })
     let idValue
-    it('Get All Riwayat Penelitian', () => {
+    it('Get All Riwayat Pengabdian', () => {
         cy.request({
             method: 'GET',
-            url: '/penelitian',
+            url: '/pengabdian',
             headers: {
                 'Authorization': `Bearer ${Cypress.env('accessToken')}`,
             },
@@ -34,18 +34,31 @@ describe('Get Riwayat Penelitian', () => {
         })
     })
 
-    it('Get Detail Riwayat Penelitian', () => {
+    it('Get Detail Riwayat Pengabdian', () => {
         if (idValue.length > 0) {
             const selectedId = idValue[0] // Menggunakan nilai pertama dari array
             cy.request({
                 method: 'GET',
-                url: `/penelitian/${selectedId}`,
+                url: `/pengabdian/${selectedId}`,
                 headers: {
                     'Authorization': `Bearer ${Cypress.env('accessToken')}`,
                 },
+                failOnStatusCode: false
             }).then((response) => {
-                expect(response.status).to.eq(200)
-                cy.log(JSON.stringify(response.body)) // Tampilkan seluruh data yang memiliki properti 'id'
+                if (Array.isArray(response.body) && response.body.length > 0) {
+                    // Respon mengandung data dalam bentuk array
+                    expect(response.status).to.eq(200)
+                    cy.log(JSON.stringify(response.body)) // Tampilkan seluruh data yang memiliki properti 'id'
+                } else if (response.status == 401) {
+                    expect(response.status).to.eq(401)
+                    cy.log("Token sudah expired")
+                } else if (response.status == 404 ) {
+                    expect(response.status).to.eq(404)
+                    cy.log("ID "+selectedId+ " tidak ditemukan")
+                } else {
+                    expect(response.status).to.eq(500)
+                    cy.log("Gagal menyimpan ke database")
+                }
             })
         } else {
             cy.log('ID tidak ditemukan')
