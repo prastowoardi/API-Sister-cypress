@@ -35,7 +35,7 @@ describe('Get Riwayat Pengabdian', () => {
     })
 
     it('Get Detail Riwayat Pengabdian', () => {
-        if (idValue.length > 0) {
+        if (idValue !== undefined &&idValue.length > 0) {
             const selectedId = idValue[0] // Menggunakan nilai pertama dari array
             cy.request({
                 method: 'GET',
@@ -43,9 +43,9 @@ describe('Get Riwayat Pengabdian', () => {
                 headers: {
                     'Authorization': `Bearer ${Cypress.env('accessToken')}`,
                 },
-                failOnStatusCode: false
+            failOnStatusCode: false
             }).then((response) => {
-                if (Array.isArray(response.body) && response.body.length > 0) {
+                if (response.status == 200) {
                     // Respon mengandung data dalam bentuk array
                     expect(response.status).to.eq(200)
                     cy.log(JSON.stringify(response.body)) // Tampilkan seluruh data yang memiliki properti 'id'

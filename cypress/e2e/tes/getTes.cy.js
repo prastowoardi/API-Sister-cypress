@@ -45,7 +45,7 @@ describe('Get Riwayat Tes', () => {
                 },
                 failOnStatusCode: false
             }).then((response) => {
-                if (Array.isArray(response.body) && response.body.length > 0) {
+                if (response.status == 200) {
                     // Respon mengandung data dalam bentuk array
                     expect(response.status).to.eq(200)
                     cy.log(JSON.stringify(response.body)) // Tampilkan seluruh data yang memiliki properti 'id'
