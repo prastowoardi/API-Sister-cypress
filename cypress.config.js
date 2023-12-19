@@ -5,6 +5,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "https://sister-api.kemdikbud.go.id/ws.php/1.0"
+    baseUrl: "https://api.mudo.tech"
   },
 });
