@@ -5,6 +5,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "https://api.mudo.tech"
+    baseUrl: "https://api.mudoapi.tech"
   },
 });

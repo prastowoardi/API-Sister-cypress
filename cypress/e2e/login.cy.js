@@ -1,4 +1,4 @@
-describe("Login SISTER", () => {
+describe("Login Mudo", () => {
     let testData
 
     before(() => {
@@ -20,20 +20,18 @@ describe("Login SISTER", () => {
         testData.forEach((userData) => {
             cy.request({
                 method: "POST",
-                url: `/authorize`,
+                url: `/login`,
                 body: userData,
                 failOnStatusCode: userData.expectedStatus == 200
             }).then((response) => {
                 if (response.status === 200) {
-                    expect(response.body).to.have.property("token")
+                    expect(response.body.data).to.have.property("token")
                     // Simpan token dalam variabel untuk digunakan selanjutnya jika diperlukan
                     const token = response.body.token
                     cy.log(token)
                 } else {
-                    expect(response.status).to.eq(401)
+                    expect(response.status).to.eq(400)
                     cy.log("Case: " + userData.description)
-                    const errorDetail = response.body.detail
-                    cy.log("Error message: " + errorDetail)
                 }
             })
         })
