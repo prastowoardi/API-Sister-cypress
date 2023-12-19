@@ -1,8 +1,8 @@
-# API-Sister-cypress
+# API-Mudo-Cypress
 
-Url API SISTER Cloud  
+Url API mudo 
 `
-https://sister-api.kemdikbud.go.id/ws.php/1.0/
+https://api.mudo.tech
 `
 
 Install package  
