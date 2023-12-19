@@ -28,15 +28,14 @@
 Cypress.Commands.add('accessToken', () => {
     cy.request({
         method: 'POST',
-        url: '/authorize', // Ganti URL dengan URL login yang sesuai
+        url: '/login', // Ganti URL dengan URL login yang sesuai
         body: {
-          username: 'xL0iwi3tdZwJeXuJHGqc1ELKLAsipRtyDeEADhMXiEw=',
-          password: 'EIwcMnQnmgRGL6ykrNdMj2ObZa+mfHlrm6sa8K9foyM4m6LATHF61XfUP1Wggkbe',
-          id_pengguna: "ae938146-a935-43dc-ad53-e1c458da907f"
+          username: 'mudo',
+          password: 'test123',
         },
       }).then((loginResponse) => {
         expect(loginResponse.status).to.eq(200)
-        expect(loginResponse.body).to.have.property('token')
+        expect(loginResponse.body.data).to.have.property('token')
         const token = loginResponse.body.token
         cy.log("Token: " + token)
       
