@@ -34,12 +34,11 @@ describe ('Get List Menu', () => {
                 expect(response.status).to.eq(200)
                 cy.log(JSON.stringify(response.body))
             } 
-            if (response.status.to === 400) {
-                cy.log(response.status)
+            if (response.status === 400) {
                 expect(response.status).to.eq(400)
                 cy.log('ID '+id+' tidak ditemukan')
             } 
-            if (response.status.to === 500) {
+            if (response.status === 500) {
                 expect(response.status).to.eq(500)
                 cy.log('Server Error')
             }
