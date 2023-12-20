@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "name": "Wadi",
+        "username": null,
+        "password": "1",
+        "roleId": 1,
+        "description": "Username kosong"
+    },
+    {
+        "id": "2",
+        "name": null,
+        "username": "00",
+        "password": "1",
+        "roleId": 1,
+        "description": "Name kosong"
+    },
+    {
+        "id": "3",
+        "name": "Wadi",
+        "username": "mudo",
+        "password": null,
+        "roleId": 1,
+        "description": "Password kosong"
+    },
+    {
+        "id": "4",
+        "name": "Wadi",
+        "username": "mudo",
+        "password": "1",
+        "roleId": 1,
+        "description": "Username sudah terdaftar"
+    },
+    {
+        "id": "5",
+        "name": "Wadi",
+        "username": "mudo",
+        "password": "1",
+        "roleId": 1,
+        "description": "Role kosong"
+    }
+]
