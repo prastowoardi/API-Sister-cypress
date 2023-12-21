@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Sosis Bakar",
+        "description": "Makanan sosis bakar: Makanan panggang sederhana.",
+        "type": "main-dish",
+        "imageUrl": null,
+        "price": 5,
+        "case": "Image Kosong"
+    },
+    {
+        "name": null,
+        "description": "Makanan sosis bakar: Makanan panggang sederhana.",
+        "type": "main-dish",
+        "imageUrl": "https://i.pinimg.com/564x/ea/d6/cf/ead6cf89b51fbb95046463ec027d280e.jpg",
+        "price": 5,
+        "case": "Name Kosong"
+    },
+    {
+        "name": "Sosis Bakar",
+        "description": null,
+        "type": "main-dish",
+        "imageUrl": "https://i.pinimg.com/564x/ea/d6/cf/ead6cf89b51fbb95046463ec027d280e.jpg",
+        "price": 5,
+        "case": "Description Kosong"
+    },
+    {
+        "name": "Sosis Bakar",
+        "description": "Makanan sosis bakar: Makanan panggang sederhana.",
+        "type": null,
+        "imageUrl": "https://i.pinimg.com/564x/ea/d6/cf/ead6cf89b51fbb95046463ec027d280e.jpg",
+        "price": 5,
+        "case": "Type Kosong"
+    },
+    {
+        "name": "Sosis Bakar",
+        "description": "Makanan sosis bakar: Makanan panggang sederhana.",
+        "type": "main-dish",
+        "imageUrl": "https://i.pinimg.com/564x/ea/d6/cf/ead6cf89b51fbb95046463ec027d280e.jpg",
+        "price": null,
+        "case": "Price Kosong"
+    }
+]
