@@ -28,7 +28,7 @@
 Cypress.Commands.add('accessToken', () => {
     cy.request({
         method: 'POST',
-        url: '/login', // Ganti URL dengan URL login yang sesuai
+        url: '/login',
         body: {
           username: 'mudo',
           password: 'test123',
@@ -37,9 +37,10 @@ Cypress.Commands.add('accessToken', () => {
         expect(loginResponse.status).to.eq(200)
         expect(loginResponse.body.data).to.have.property('token')
         const token = loginResponse.body.data.token
-        cy.log("Token: " + token)
+        // cy.log("Token: " + token)
       
         // Simpan token dalam variabel untuk digunakan dalam permintaan berikutnya
         Cypress.env('accessToken', token)
+        return cy.wrap(token)
       })
 })
