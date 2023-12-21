@@ -5,7 +5,7 @@ describe('Create menu', () => {
     let testData
 
     before(() => {
-        cy.fixture('../fixtures/addMenu.json').then((data) => {
+        cy.fixture('../fixtures/menu.json').then((data) => {
             testData = data
         })
     })
