@@ -36,7 +36,7 @@ Cypress.Commands.add('accessToken', () => {
       }).then((loginResponse) => {
         expect(loginResponse.status).to.eq(200)
         expect(loginResponse.body.data).to.have.property('token')
-        const token = loginResponse.body.token
+        const token = loginResponse.body.data.token
         cy.log("Token: " + token)
       
         // Simpan token dalam variabel untuk digunakan dalam permintaan berikutnya
