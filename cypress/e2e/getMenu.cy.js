@@ -36,13 +36,12 @@ describe ('Get List Menu', () => {
             } 
             if (response.status === 400) {
                 expect(response.status).to.eq(400)
-                cy.log('ID '+id+' tidak ditemukan')
+                throw new Error('ID '+id+' tidak ditemukan')
             } 
             if (response.status === 500) {
                 expect(response.status).to.eq(500)
-                cy.log('Server Error')
-            }
-            
+                throw new Error('Server Error')
+            } 
         })
     })
 })
