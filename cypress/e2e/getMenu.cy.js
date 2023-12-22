@@ -3,7 +3,7 @@ describe ('Get List Menu', () => {
     it('Get List Menu', () => {
         cy.request({
             method: 'GET',
-            url: '/menus',
+            url: '/menus?perPage=100',
         }).then ((response) => {
             if (response.status === 200) {
                 expect(response.status).to.eq(200)
@@ -13,7 +13,7 @@ describe ('Get List Menu', () => {
                 menu.forEach((menu) => {
                     if (menu.hasOwnProperty('id')){
                         idValue.push(menu.id);
-                        cy.log(menu.id)
+                        cy.log(menu.name)
                     }
                 });
             } else {
