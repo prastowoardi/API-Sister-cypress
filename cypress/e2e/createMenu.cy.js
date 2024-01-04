@@ -51,7 +51,7 @@ describe('Create menu', () => {
                 description: faker.commerce.productDescription(),
                 imageUrl: faker.image.url(),
                 type: "beverage",
-                price: 15
+                price: faker.number.int(100)
             },
             headers: {
                 Authorization: `Bearer ${accessToken}`,
