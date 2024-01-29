@@ -13,7 +13,7 @@ describe ('Get List Menu', () => {
                 menu.forEach((menu) => {
                     if (menu.hasOwnProperty('id')){
                         idValue.push(menu.id);
-                        cy.log(menu.name)
+                        cy.log(`ID : ${menu.id}`, `Name : ${menu.name}`)
                     }
                 });
             } else {
@@ -32,7 +32,7 @@ describe ('Get List Menu', () => {
         }).then ((response) => {
             if (response.status === 200) {
                 expect(response.status).to.eq(200)
-                cy.log(JSON.stringify(response.body))
+                cy.log(`ID : ${id}`, JSON.stringify(response.body))
             } 
             if (response.status === 400) {
                 expect(response.status).to.eq(400)
