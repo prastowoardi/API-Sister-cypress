@@ -36,7 +36,8 @@ describe ('Get List Menu', () => {
             } 
             if (response.status === 400) {
                 expect(response.status).to.eq(400)
-                throw new Error('ID '+id+' tidak ditemukan')
+                let message = JSON.stringify(response.body.message)
+                throw new Error(`ID : ${id}, ${message}`)
             } 
             if (response.status === 500) {
                 expect(response.status).to.eq(500)
