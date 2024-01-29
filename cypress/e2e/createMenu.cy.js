@@ -36,7 +36,7 @@ describe('Create menu', () => {
                     cy.log(JSON.stringify(response.body.message))
                 } else if (response.status === 500) {
                     expect(response.status).to.eq(500)
-                    cy.log('Server Error')
+                    throw new Error('Server Error')
                 }
             })
         })
@@ -64,10 +64,11 @@ describe('Create menu', () => {
                 cy.log(JSON.stringify(response.body))
             } else if (response.status === 400 || response.status === 401) {
                 expect(response.status).to.eq(400) || expect(response.status).to.eq(401)
-                cy.log(JSON.stringify(response.body.message))
+                let message = JSON.stringify(response.body.message)
+                throw new Error(`${message}`)
             } else if (response.status === 500) {
                 expect(response.status).to.eq(500)
-                cy.log('Server Error')
+                throw new Error('Server Error')
             }
         })
     })
